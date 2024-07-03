@@ -1,0 +1,46 @@
+<h2><strong>Registered Contact Data</strong></h2>
+
+<!-- Table Format -->
+<table class="table table-dark">
+  <thead >
+    <tr>
+      <th>S.No.</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Address</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let person of persons let i = index">
+      <!-- Replace this with actual S.No. if you have a list of data -->
+      <td>{{ i + 1 }}</td>
+      <td>{{ person.firstname }}</td>
+      <td>{{ person.lastname }}</td>
+      <td>{{ person.email }}</td>
+      <td>{{ person.phoneNumber }}</td>
+      <td>{{ person.address }}</td>
+      <td>{{ person.password }}</td>
+    </tr>
+  </tbody>
+  
+</table>
+
+<!-- Detailed Format 
+<div *ngIf="person">
+  <h3>Contact Data Details</h3>
+  <p><strong>First Name:</strong> {{ person.firstname }}</p>
+  <p><strong>Last Name:</strong> {{ person.lastname }}</p>
+  <p><strong>Email:</strong> {{ person.email }}</p>
+  <p><strong>Phone Number:</strong> {{ person.phoneNumber }}</p>
+  <p><strong>Address:</strong> {{ person.address }}</p>
+  <p><strong>Password:</strong> {{ person.password }}</p>
+</div>
+-->
+
+<div *ngIf="!persons">
+  <p>No contact data available.</p>
+</div>
